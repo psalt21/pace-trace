@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>PaceTrace</title>
+  </head>
+  <body>
+    <div id="top">
+          <h1>PaceTrace</h1>
+          <h3>measure by <em>YOUR</em> foot</h3>
+        </div>
+
+        <div id="inputs-and-results">
+          <div id="inputs">
+            <label>Shoe Size (men): </label>
+              <select id="shoe-size">
+                <option>6</option>
+                <option>6.5</option>
+                <option>7</option>
+                <option>7.5</option>
+                <option>8</option>
+                <option>8.5</option>
+                <option>9</option>
+                <option>9.5</option>
+                <option>10</option>
+                <option>10.5</option>
+                <option>11</option>
+                <option>11.5</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+              </select>
+            </br>
+            <label>Width: </label><input type="text" id="width" class="input" title="width" placeholder="Total Steps (barefoot)">
+            </br>
+            <label class="input-spacing">Height: </label><input type="text" id="height" class="input" title="height" placeholder="Total Steps (barefoot)">
+            </br>
+            <button onclick="getInputs()">Calculate</button>
+          </div>
+
+          <div id="results">
+            <div class="result-section">
+              <div class="result-title">
+                <p id="width-result"><strong>Width: </strong></p>
+              </div>
+            </div>
+
+            <div class="result-section">
+                <div class="result-title">
+                  <p id="height-result"><strong>Height: </strong></p>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="result-title">
+                  <p id="area-result"><strong>Square Footage (area): </strong></p>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="result-title">
+                  <p id="hypot-result"><strong>Hypotenuse (diagonal length): </strong></p>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="result-title">
+                  <p id="circum-result"><strong>Circumference: </strong></p>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="shape-result">
+          <h2>Final Ratio</h2>
+          <div id="final-shape"></div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
