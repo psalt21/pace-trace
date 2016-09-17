@@ -1,7 +1,7 @@
-var shoeSize = 0;
+// var shoeSize = 0;
 var footSizeInInches = 0;
-var widthInSteps = 0;
-var heightInSteps = 0;
+// var widthInSteps = 0;
+// var heightInSteps = 0;
 var widthInInches = 0;
 var heightInInches = 0;
 var widthInFeet = 0;
@@ -12,16 +12,31 @@ var heightInFeet = 0;
   // get total width steps by id
   // get total height steps by id
 function getInputs(){
-  shoeSize = document.getElementById('shoe-size').value;
-  widthInSteps = document.getElementById('width').value;
-  heightInSteps = document.getElementById('height').value;
+  getShoeSize();
+  getWidthInSteps();
+  getHeightInSteps();
   console.log('shoe size is ' + shoeSize + ' width is ' + widthInSteps + ' and height is ' + heightInSteps);
-  footSizeToInches();
+  footSizeToInches(shoeSize);
   totalStepsToFeetMeasurment();
 }
 
+function getShoeSize(){
+  var shoeSize = document.getElementById('shoe-size').value;
+  return shoeSize;
+}
+
+function getWidthInSteps(){
+  var widthInSteps = document.getElementById('width').value;
+  return widthInSteps;
+}
+
+function getHeightInSteps(){
+  var heightInSteps = document.getElementById('height').value;
+  return heightInSteps;
+}
+
 // convert foot size into actual inches
-function footSizeToInches(){
+function footSizeToInches(shoeSize){
   if(shoeSize == 6){
     footSizeInInches = 9.25;
   }else if(shoeSize == 6.5){

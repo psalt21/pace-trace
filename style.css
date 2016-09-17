@@ -43,13 +43,13 @@ h1{
 /*.result-title{
   font-weight: bold;
 }*/
-#inputs-and-results{
+.inputs-and-results{
   margin-left: auto;
   margin-right: auto;
   width: 800px;
   height: 200px;
 }
-#inputs{
+.inputs{
   width: 198px;
   height: 180px;
   float: left;
@@ -71,4 +71,7 @@ h1{
 button{
   margin-left: 60px;
   margin-top: 20px;
+}
+.shoe-size{
+
 }
