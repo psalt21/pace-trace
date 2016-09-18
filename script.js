@@ -1,42 +1,33 @@
-// var shoeSize = 0;
-var footSizeInInches = 0;
-// var widthInSteps = 0;
-// var heightInSteps = 0;
-var widthInInches = 0;
-var heightInInches = 0;
-var widthInFeet = 0;
-var heightInFeet = 0;
 
 // get inputs function upon the "calculate" click event
   // get shoe size by id
   // get total width steps by id
   // get total height steps by id
 function getInputs(){
-  getShoeSize();
-  getWidthInSteps();
-  getHeightInSteps();
+  var shoeSize = getShoeSize();
+  var widthInSteps = getWidthInSteps();
+  var heightInSteps = getHeightInSteps();
   console.log('shoe size is ' + shoeSize + ' width is ' + widthInSteps + ' and height is ' + heightInSteps);
-  footSizeToInches(shoeSize);
-  totalStepsToFeetMeasurment();
+  var footSizeInInches = footSizeToInches(shoeSize);
+  var widthInFeet = stepsToFeetMeasurment(widthInSteps, footSizeInInches);
+  var heightInFeet = stepsToFeetMeasurment(heightInSteps, footSizeInInches);
 }
 
 function getShoeSize(){
-  var shoeSize = document.getElementById('shoe-size').value;
-  return shoeSize;
+return document.getElementById('shoe-size').value;
 }
 
 function getWidthInSteps(){
-  var widthInSteps = document.getElementById('width').value;
-  return widthInSteps;
+  return document.getElementById('width').value;
 }
 
 function getHeightInSteps(){
-  var heightInSteps = document.getElementById('height').value;
-  return heightInSteps;
+  return document.getElementById('height').value;
 }
 
 // convert foot size into actual inches
 function footSizeToInches(shoeSize){
+  var footSizeInInches = 0;
   if(shoeSize == 6){
     footSizeInInches = 9.25;
   }else if(shoeSize == 6.5){
@@ -73,20 +64,17 @@ function footSizeToInches(shoeSize){
     footSizeInInches = 12.5;
   }
   console.log("the length of the bare foot is " + footSizeInInches);
+  return footSizeInInches;
 }
 
 // convert steps to size in feet i.e. 4.5 feet
-function totalStepsToFeetMeasurment(){
-  widthInFeet = Math.round(widthInSteps * footSizeInInches) / 12;
-  heightInFeet = Math.round(heightInSteps * footSizeInInches) / 12;
-  console.log('width is ' + widthInFeet + ' and height is ' + heightInFeet);
-  feetToInches();
+function stepsToFeetMeasurment(steps, footSizeInInches){
+  return Math.round(steps * footSizeInInches) / 12;
 }
 
 // convert feet to inches
-function feetToInches(){
-  widthInInches = widthInFeet * 12;
-  heightInInches = heightInFeet * 12;
+function feetToInches(feet){
+  return feet * 12;
 }
 
 // calculate area/square foot function
