@@ -7,10 +7,41 @@ function getInputs(){
   var shoeSize = getShoeSize();
   var widthInSteps = getWidthInSteps();
   var heightInSteps = getHeightInSteps();
-  console.log('shoe size is ' + shoeSize + ' width is ' + widthInSteps + ' and height is ' + heightInSteps);
+  console.log('shoe size is ' + shoeSize + ' width is ' + widthInSteps + ' STEPS and height is ' + heightInSteps + ' STEPS.');
+  calcuInputs(shoeSize, widthInSteps, heightInSteps);
+}
+
+function calcuInputs(shoeSize, widthInSteps, heightInSteps){
   var footSizeInInches = footSizeToInches(shoeSize);
   var widthInFeet = stepsToFeetMeasurment(widthInSteps, footSizeInInches);
   var heightInFeet = stepsToFeetMeasurment(heightInSteps, footSizeInInches);
+  calcuOutputs(widthInFeet, heightInFeet);
+  console.log('the total width is ' + widthInFeet + ' feet.');
+  console.log('the total height is ' + heightInFeet + ' feet.');
+}
+
+function calcuOutputs(width, height){
+  var squareFootage = calcSquareFootage(width, height);
+  var hypotenuse = calcHypotenuse(width, height);
+  var circumference = calcCircumference(width, height);
+  console.log('the square footage is ' + squareFootage + ' feet.');
+  console.log('the diagonal length is ' + hypotenuse + ' feet.');
+  console.log('the circumference is ' + circumference + ' feet.');
+}
+
+// calculate area/square foot function
+function calcSquareFootage(width, height){
+  return Math.round(width * height);
+}
+
+// calculate hypotonuse diagonal length function
+function calcHypotenuse(width, height){
+  return Math.round(Math.sqrt(width*width + height*height));
+}
+
+// calculate Circumference function
+function calcCircumference(width, height){
+  return Math.round(2 * (width + height));
 }
 
 function getShoeSize(){
@@ -23,6 +54,21 @@ function getWidthInSteps(){
 
 function getHeightInSteps(){
   return document.getElementById('height').value;
+}
+
+// convert steps to size in feet i.e. 4.5 feet
+function stepsToFeetMeasurment(steps, footSizeInInches){
+  return Math.round((steps * footSizeInInches) / 12);
+}
+
+// convert feet to inches
+function ConvertFeetToInches(feet){
+  return feet * 12;
+}
+
+// convert feet into pixels
+function convFeetToPixels(){
+
 }
 
 // convert foot size into actual inches
@@ -63,30 +109,8 @@ function footSizeToInches(shoeSize){
   }else if(shoeSize == 16){
     footSizeInInches = 12.5;
   }
-  console.log("the length of the bare foot is " + footSizeInInches);
+  console.log("the length of the bare foot is " + footSizeInInches + ' inches.');
   return footSizeInInches;
 }
-
-// convert steps to size in feet i.e. 4.5 feet
-function stepsToFeetMeasurment(steps, footSizeInInches){
-  return Math.round(steps * footSizeInInches) / 12;
-}
-
-// convert feet to inches
-function feetToInches(feet){
-  return feet * 12;
-}
-
-// calculate area/square foot function
-function calcSquareFootage(){
-  var squareFootage = widthInFeet * heightInFeet;
-  return squareFootage;
-}
-
-// calculate hypotonuse diagonal length function
-
-// calculate Circumference function
-
-// convert feet into pixels
 
 // update style for final ratio div based on size calculated in pixels function
