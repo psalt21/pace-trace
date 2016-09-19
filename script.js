@@ -27,6 +27,19 @@ function calcuOutputs(width, height){
   console.log('the square footage is ' + squareFootage + ' feet.');
   console.log('the diagonal length is ' + hypotenuse + ' feet.');
   console.log('the circumference is ' + circumference + ' feet.');
+  publishResults(width, height, squareFootage, hypotenuse, circumference);
+}
+
+function publishResults(width, height, squareFootage, hypotenuse, circumference){
+  var widthLocation = getOutputDestination('width-result', width);
+  var heightLocation = getOutputDestination('height-result', height);
+  var sqrFootLocation = getOutputDestination('area-result', squareFootage);
+  var hypotLocation = getOutputDestination('hypot-result', hypotenuse);
+  var circumLocation = getOutputDestination('circum-result', circumference);
+}
+
+function getOutputDestination(outputID, outputValue){
+  document.getElementById(outputID).innerHTML = (outputValue + ' feet');
 }
 
 // calculate area/square foot function
