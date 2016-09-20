@@ -36,6 +36,20 @@ function publishResults(width, height, squareFootage, hypotenuse, circumference)
   var sqrFootLocation = getOutputDestination('area-result', squareFootage);
   var hypotLocation = getOutputDestination('hypot-result', hypotenuse);
   var circumLocation = getOutputDestination('circum-result', circumference);
+  var renderedWidth = convWidthToPixels(width, 'final-shape');
+  var renderedHeight = convHeightToPixels(height, 'final-shape');
+}
+
+// convert feet into pixels
+function convWidthToPixels(shapeSize, destinationId){
+  var convertedSize = shapeSize * 10;
+  document.getElementById(destinationId).style.width = (convertedSize + 'px');
+  document.getElementById(destinationId).style.backgroundColor = '#5491e6';
+}
+
+function convHeightToPixels(shapeSize, destinationId){
+  var convertedSize = shapeSize * 10;
+  document.getElementById(destinationId).style.height = (convertedSize + 'px');
 }
 
 function getOutputDestination(outputID, outputValue){
@@ -77,11 +91,6 @@ function stepsToFeetMeasurment(steps, footSizeInInches){
 // convert feet to inches
 function ConvertFeetToInches(feet){
   return feet * 12;
-}
-
-// convert feet into pixels
-function convFeetToPixels(){
-
 }
 
 // convert foot size into actual inches
