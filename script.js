@@ -31,11 +31,11 @@ function calcuOutputs(width, height){
 }
 
 function publishResults(width, height, squareFootage, hypotenuse, circumference){
-  var widthLocation = getOutputDestination('width-result', width);
-  var heightLocation = getOutputDestination('height-result', height);
-  var sqrFootLocation = getOutputDestination('area-result', squareFootage);
-  var hypotLocation = getOutputDestination('hypot-result', hypotenuse);
-  var circumLocation = getOutputDestination('circum-result', circumference);
+  var widthLocation = applyOutputToDestination('width-result', width);
+  var heightLocation = applyOutputToDestination('height-result', height);
+  var sqrFootLocation = applyOutputToDestination('area-result', squareFootage);
+  var hypotLocation = applyOutputToDestination('hypot-result', hypotenuse);
+  var circumLocation = applyOutputToDestination('circum-result', circumference);
   var renderedWidth = convWidthToPixels(width, 'final-shape');
   var renderedHeight = convHeightToPixels(height, 'final-shape');
 }
@@ -44,7 +44,7 @@ function publishResults(width, height, squareFootage, hypotenuse, circumference)
 function convWidthToPixels(shapeSize, destinationId){
   var convertedSize = shapeSize * 10;
   document.getElementById(destinationId).style.width = (convertedSize + 'px');
-  document.getElementById(destinationId).style.backgroundColor = '#5491e6';
+  document.getElementById(destinationId).style.backgroundColor = '#94b4dc';
 }
 
 function convHeightToPixels(shapeSize, destinationId){
@@ -52,7 +52,7 @@ function convHeightToPixels(shapeSize, destinationId){
   document.getElementById(destinationId).style.height = (convertedSize + 'px');
 }
 
-function getOutputDestination(outputID, outputValue){
+function applyOutputToDestination(outputID, outputValue){
   document.getElementById(outputID).innerHTML = (outputValue + ' feet');
 }
 

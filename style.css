@@ -1,5 +1,8 @@
 body{
   font-family: sans-serif;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #top{
   width: 100%;
@@ -25,15 +28,15 @@ h1{
 #shape-result{
   width: 100%;
   height: 100%;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   margin-bottom: 25px;
   margin-top: 25px;
 }
 #final-shape{
   background-color: #c6cbd2;
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: 250px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -44,22 +47,27 @@ h1{
   font-weight: bold;
 }*/
 .inputs-and-results{
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
   height: 100%;
 }
 .inputs{
-  width: 100%;
+  width: 50%;
   height: 100%;
+  text-align: center;
   float: left;
-  margin: 35px 35px 0 131px;
+  margin: 35px 0 0 0;
 }
 #results{
-  width: 100%;
+  width: 50%;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   float: left;
-  margin: 9px 0 0 0;
+  margin: 9px 0 20px 0;
+}
+#calculate{
+  margin-left: auto;
+  margin-right: auto;
 }
 .result-title{
   color: #ababab;
