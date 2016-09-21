@@ -1,3 +1,5 @@
+var reduceSize = false;
+
 
 // get inputs function upon the "calculate" click event
   // get shoe size by id
@@ -36,13 +38,25 @@ function publishResults(width, height, squareFootage, hypotenuse, circumference)
   var sqrFootLocation = applyOutputToDestination('area-result', squareFootage);
   var hypotLocation = applyOutputToDestination('hypot-result', hypotenuse);
   var circumLocation = applyOutputToDestination('circum-result', circumference);
+  determineIfSizeIsReduced(width);
   var renderedWidth = convWidthToPixels(width, 'final-shape');
   var renderedHeight = convHeightToPixels(height, 'final-shape');
+}
+
+function determineIfSizeIsReduced(width){
+  if(width * 10 >= 600){
+    reduceSize = true;
+  }else{
+    reduceSize = false;
+  }
 }
 
 // convert feet into pixels
 function convWidthToPixels(shapeSize, destinationId){
   var convertedSize = shapeSize * 10;
+    if(reduceSize === true){
+      convertedSize = (shapeSize * 10) / 2;
+    }
   document.getElementById(destinationId).style.width = (convertedSize + 'px');
   document.getElementById(destinationId).style.backgroundColor = '#94b4dc';
   // document.getElementById('inputs-and-results').style.width = (convertedSize + 'px');
@@ -50,6 +64,9 @@ function convWidthToPixels(shapeSize, destinationId){
 
 function convHeightToPixels(shapeSize, destinationId){
   var convertedSize = shapeSize * 10;
+    if(reduceSize === true){
+      convertedSize = (shapeSize * 10) / 2;
+    }
   document.getElementById(destinationId).style.height = (convertedSize + 'px');
 }
 
