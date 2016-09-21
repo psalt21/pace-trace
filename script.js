@@ -45,7 +45,7 @@ function convWidthToPixels(shapeSize, destinationId){
   var convertedSize = shapeSize * 10;
   document.getElementById(destinationId).style.width = (convertedSize + 'px');
   document.getElementById(destinationId).style.backgroundColor = '#94b4dc';
-  document.getElementById('inputs-and-results').style.width = (convertedSize + 'px');
+  // document.getElementById('inputs-and-results').style.width = (convertedSize + 'px');
 }
 
 function convHeightToPixels(shapeSize, destinationId){
