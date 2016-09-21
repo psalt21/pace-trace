@@ -1,13 +1,8 @@
-
 // get inputs function upon the "calculate" click event
-  // get shoe size by id
-  // get total width steps by id
-  // get total height steps by id
 function getInputs(){
   var shoeSize = getShoeSize();
   var widthInSteps = getWidthInSteps();
   var heightInSteps = getHeightInSteps();
-  console.log('shoe size is ' + shoeSize + ' width is ' + widthInSteps + ' STEPS and height is ' + heightInSteps + ' STEPS.');
   calcuInputs(shoeSize, widthInSteps, heightInSteps);
 }
 
@@ -16,17 +11,12 @@ function calcuInputs(shoeSize, widthInSteps, heightInSteps){
   var widthInFeet = stepsToFeetMeasurment(widthInSteps, footSizeInInches);
   var heightInFeet = stepsToFeetMeasurment(heightInSteps, footSizeInInches);
   calcuOutputs(widthInFeet, heightInFeet);
-  console.log('the total width is ' + widthInFeet + ' feet.');
-  console.log('the total height is ' + heightInFeet + ' feet.');
 }
 
 function calcuOutputs(width, height){
   var squareFootage = calcSquareFootage(width, height);
   var hypotenuse = calcHypotenuse(width, height);
   var circumference = calcCircumference(width, height);
-  console.log('the square footage is ' + squareFootage + ' feet.');
-  console.log('the diagonal length is ' + hypotenuse + ' feet.');
-  console.log('the circumference is ' + circumference + ' feet.');
   publishResults(width, height, squareFootage, hypotenuse, circumference);
 }
 
@@ -36,21 +26,33 @@ function publishResults(width, height, squareFootage, hypotenuse, circumference)
   var sqrFootLocation = applyOutputToDestination('area-result', squareFootage);
   var hypotLocation = applyOutputToDestination('hypot-result', hypotenuse);
   var circumLocation = applyOutputToDestination('circum-result', circumference);
-  var renderedWidth = convWidthToPixels(width, 'final-shape');
-  var renderedHeight = convHeightToPixels(height, 'final-shape');
+  var multiplyRate = determineMultiplyRate(width, height);
+  var renderedWidth = convWidthToPixels(width, multiplyRate, 'final-shape');
+  var renderedHeight = convHeightToPixels(height, multiplyRate, 'final-shape');
 }
 
 // convert feet into pixels
-function convWidthToPixels(shapeSize, destinationId){
-  var convertedSize = shapeSize * 10;
+function convWidthToPixels(shapeSize, multiplyRate, destinationId){
+  var convertedSize = shapeSize * multiplyRate;
   document.getElementById(destinationId).style.width = (convertedSize + 'px');
   document.getElementById(destinationId).style.backgroundColor = '#94b4dc';
-  document.getElementById('inputs-and-results').style.width = (convertedSize + 'px');
 }
 
-function convHeightToPixels(shapeSize, destinationId){
-  var convertedSize = shapeSize * 10;
+function convHeightToPixels(shapeSize, multiplyRate, destinationId){
+  var convertedSize = shapeSize * multiplyRate;
   document.getElementById(destinationId).style.height = (convertedSize + 'px');
+}
+
+function determineMultiplyRate(width, height){
+  var multiplyRate = 10;
+  var convertedWidthSize = width * multiplyRate;
+  var convertedHeightSize = height * multiplyRate;
+  while(convertedWidthSize > 600 || convertedHeightSize > 400){
+    multiplyRate = multiplyRate / 2;
+    convertedWidthSize = width * multiplyRate;
+    convertedHeightSize = height * multiplyRate;
+  }
+  return multiplyRate;
 }
 
 function applyOutputToDestination(outputID, outputValue){
@@ -132,8 +134,5 @@ function footSizeToInches(shoeSize){
   }else if(shoeSize == 16){
     footSizeInInches = 12.5;
   }
-  console.log("the length of the bare foot is " + footSizeInInches + ' inches.');
   return footSizeInInches;
 }
-
-// update style for final ratio div based on size calculated in pixels function
