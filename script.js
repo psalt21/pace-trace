@@ -47,7 +47,7 @@ function determineMultiplyRate(width, height){
   var multiplyRate = 10;
   var convertedWidthSize = width * multiplyRate;
   var convertedHeightSize = height * multiplyRate;
-  while(convertedWidthSize > 600 || convertedHeightSize > 400){
+  while(convertedWidthSize > 530 || convertedHeightSize > 250){
     multiplyRate = multiplyRate / 2;
     convertedWidthSize = width * multiplyRate;
     convertedHeightSize = height * multiplyRate;
@@ -135,4 +135,8 @@ function footSizeToInches(shoeSize){
     footSizeInInches = 12.5;
   }
   return footSizeInInches;
+}
+
+function resetAll(){
+  calcuOutputs(0, 0);
 }
