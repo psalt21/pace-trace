@@ -1,31 +1,44 @@
+// desired functionality:
+  // -DONE- 1. rework conversion from shoesize to foot length to be simple equation
+  // 2. Add female option
+  // 3. Add option to bare foot vs wearing shoes and add maybe .25" to each step or 1" to every 4 steps
+  // 4. Do I want to clear out previous steps when clear is clicked or just results?
+  // 5. Click on specific result for individual representation on final ratio shape-result
+  // 6. (CSS specific) Mobile optimize CSS layout and make more dynamic for browser window resizing
+  // 7. if height or width is 0 then return "0 feet" for diagonal length
+  // 8. Add "?"  marks next to each output that you can click (or hover over) to have window pop-up explaining the results
+  // 9. an explanation or link to explanation of purpose of application and how to use it
+  // 10. hit "enter" while in width or height fields to calculate instead of clicking button
+  // 11. onclick and hover response for buttons (color change etc.)
+
 // get inputs function upon the "calculate" click event
 function getInputs(){
-  var shoeSize = getShoeSize();
-  var widthInSteps = getWidthInSteps();
-  var heightInSteps = getHeightInSteps();
+  var shoeSize = document.getElementById('shoe-size').value;
+  var widthInSteps = document.getElementById('width').value;
+  var heightInSteps = document.getElementById('height').value;
   calcuInputs(shoeSize, widthInSteps, heightInSteps);
 }
 
 function calcuInputs(shoeSize, widthInSteps, heightInSteps){
-  var footSizeInInches = footSizeToInches(shoeSize);
-  var widthInFeet = stepsToFeetMeasurment(widthInSteps, footSizeInInches);
-  var heightInFeet = stepsToFeetMeasurment(heightInSteps, footSizeInInches);
+  var currentFootLength =  footSizeToInchesCalc(shoeSize, 0.17);
+  var widthInFeet = Math.round((widthInSteps * currentFootLength) / 12);
+  var heightInFeet = Math.round((heightInSteps * currentFootLength) / 12);
   calcuOutputs(widthInFeet, heightInFeet);
 }
 
 function calcuOutputs(width, height){
-  var squareFootage = calcSquareFootage(width, height);
-  var hypotenuse = calcHypotenuse(width, height);
-  var circumference = calcCircumference(width, height);
+  var squareFootage = Math.round(width * height);
+  var hypotenuse = Math.round(Math.sqrt(width*width + height*height));
+  var circumference = Math.round(2 * (width + height));
   publishResults(width, height, squareFootage, hypotenuse, circumference);
 }
 
 function publishResults(width, height, squareFootage, hypotenuse, circumference){
-  var widthLocation = applyOutputToDestination('width-result', width);
-  var heightLocation = applyOutputToDestination('height-result', height);
-  var sqrFootLocation = applyOutputToDestination('area-result', squareFootage);
-  var hypotLocation = applyOutputToDestination('hypot-result', hypotenuse);
-  var circumLocation = applyOutputToDestination('circum-result', circumference);
+  var widthLocation = document.getElementById('width-result').innerHTML = (width + ' feet');
+  var heightLocation = document.getElementById('height-result').innerHTML = (height + ' feet');
+  var sqrFootLocation = document.getElementById('area-result').innerHTML = (squareFootage + ' feet');
+  var hypotLocation = document.getElementById('hypot-result').innerHTML = (hypotenuse + ' feet');
+  var circumLocation = document.getElementById('circum-result').innerHTML = (circumference + ' feet');
   var multiplyRate = determineMultiplyRate(width, height);
   var renderedWidth = convWidthToPixels(width, multiplyRate, 'final-shape');
   var renderedHeight = convHeightToPixels(height, multiplyRate, 'final-shape');
@@ -55,86 +68,22 @@ function determineMultiplyRate(width, height){
   return multiplyRate;
 }
 
-function applyOutputToDestination(outputID, outputValue){
-  document.getElementById(outputID).innerHTML = (outputValue + ' feet');
-}
-
-// calculate area/square foot function
-function calcSquareFootage(width, height){
-  return Math.round(width * height);
-}
-
-// calculate hypotonuse diagonal length function
-function calcHypotenuse(width, height){
-  return Math.round(Math.sqrt(width*width + height*height));
-}
-
-// calculate Circumference function
-function calcCircumference(width, height){
-  return Math.round(2 * (width + height));
-}
-
-function getShoeSize(){
-return document.getElementById('shoe-size').value;
-}
-
-function getWidthInSteps(){
-  return document.getElementById('width').value;
-}
-
-function getHeightInSteps(){
-  return document.getElementById('height').value;
-}
-
-// convert steps to size in feet i.e. 4.5 feet
-function stepsToFeetMeasurment(steps, footSizeInInches){
-  return Math.round((steps * footSizeInInches) / 12);
-}
-
 // convert feet to inches
 function ConvertFeetToInches(feet){
   return feet * 12;
 }
 
-// convert foot size into actual inches
-function footSizeToInches(shoeSize){
-  var footSizeInInches = 0;
-  if(shoeSize == 6){
-    footSizeInInches = 9.25;
-  }else if(shoeSize == 6.5){
-    footSizeInInches = 9.5;
-  }else if(shoeSize == 7){
-    footSizeInInches = 9.625;
-  }else if(shoeSize == 7.5){
-    footSizeInInches = 9.75;
-  }else if(shoeSize == 8){
-    footSizeInInches = 9.9375;
-  }else if(shoeSize == 8.5){
-    footSizeInInches = 10.125;
-  }else if(shoeSize == 9){
-    footSizeInInches = 10.25;
-  }else if(shoeSize == 9.5){
-    footSizeInInches = 10.4375;
-  }else if(shoeSize == 10){
-    footSizeInInches = 10.5625;
-  }else if(shoeSize == 10.5){
-    footSizeInInches = 10.75;
-  }else if(shoeSize == 11){
-    footSizeInInches = 10.9375;
-  }else if(shoeSize == 11.5){
-    footSizeInInches = 11.125;
-  }else if(shoeSize == 12){
-    footSizeInInches = 11.25;
-  }else if(shoeSize == 13){
-    footSizeInInches = 11.5625;
-  }else if(shoeSize == 14){
-    footSizeInInches = 11.875;
-  }else if(shoeSize == 15){
-    footSizeInInches = 12.1875;
-  }else if(shoeSize == 16){
-    footSizeInInches = 12.5;
+function footSizeToInchesCalc(shoeSize, increaseRate){
+  // smallest size is 6 which is 9.25" foot length.
+    // if shoeSize minus 6 is greater than 0, then add increaseRate for every .5 over 0.
+  var currentFootLength = 9.25;
+  var sizeDif = shoeSize - 6;
+  if(sizeDif > 0){
+    for(i = sizeDif; i > 0; i = i - 0.5){
+      currentFootLength = currentFootLength + increaseRate;
+    }
   }
-  return footSizeInInches;
+  return currentFootLength;
 }
 
 function resetAll(){
