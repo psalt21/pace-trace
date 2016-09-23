@@ -12,8 +12,9 @@
   // 10. hit "enter" while in width or height fields to calculate instead of clicking button
   // 11. onclick and hover response for buttons (color change etc.)
   // 12. add option to flip width and height
-  // 13. rescale shape bigger if it is under a certain size so it won't end up being 1px x 1px
+  // -DONE- 13. rescale shape bigger if it is under a certain size so it won't end up being 1px x 1px
   // 14. do not allow letters in width or height field
+  // 15. have x icon in field to clear field by clicking
 
 // get inputs function upon the "calculate" click event
 function getInputs(){
@@ -42,7 +43,7 @@ function calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender){
       startingFootLength = 8.875;
     }
     if(document.getElementById('yes-option').checked){
-      startingFootLength += 2.5
+      startingFootLength += 2.5;
     }
   var currentFootLength =  footSizeToInchesCalc(shoeSize, startingFootLength, 0.17);
   var widthInFeet = Math.round((widthInSteps * currentFootLength) / 12);
@@ -84,8 +85,13 @@ function determineMultiplyRate(width, height){
   var multiplyRate = 10;
   var convertedWidthSize = width * multiplyRate;
   var convertedHeightSize = height * multiplyRate;
-  while(convertedWidthSize > 430 || convertedHeightSize > 250){
-    multiplyRate = multiplyRate / 2;
+  while(convertedHeightSize < 230){
+    multiplyRate = multiplyRate * 2;
+    convertedWidthSize = width * multiplyRate;
+    convertedHeightSize = height * multiplyRate;
+  }
+  while(convertedWidthSize > 430 || convertedHeightSize > 230){
+    multiplyRate = multiplyRate / 1.01;
     convertedWidthSize = width * multiplyRate;
     convertedHeightSize = height * multiplyRate;
   }
