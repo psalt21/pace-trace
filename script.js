@@ -2,7 +2,7 @@
   // -DONE- 1. rework conversion from shoesize to foot length to be simple equation
   // -DONE- 2. Add female option
   // 2a. Add option to input custom length but only as decimal.
-  // 3. Add option to bare foot vs wearing shoes and add maybe .25" to each step or 1" to every 4 steps
+  // 3. Add option to bare foot vs wearing shoes and add maybe 2.5" to foot length
   // 4. Do I want to clear out previous steps when clear is clicked or just results?
   // 5. Click on specific result for individual representation on final ratio shape-result
   // 6. (CSS specific) Mobile optimize CSS layout and make more dynamic for browser window resizing
@@ -12,6 +12,8 @@
   // 10. hit "enter" while in width or height fields to calculate instead of clicking button
   // 11. onclick and hover response for buttons (color change etc.)
   // 12. add option to flip width and height
+  // 13. rescale shape bigger if it is under a certain size so it won't end up being 1px x 1px
+  // 14. do not allow letters in width or height field
 
 // get inputs function upon the "calculate" click event
 function getInputs(){

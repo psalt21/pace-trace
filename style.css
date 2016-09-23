@@ -94,9 +94,10 @@ h2{
 #reset-button{
   text-align: center;
   width: 100%;
+  clear: both;
 }
 #reset-all{
-  margin: 0 0 0 0;
+  margin: 10px 0 0 0;
   background-color: #f79797;
   width: 55px;
   height: inherit;
