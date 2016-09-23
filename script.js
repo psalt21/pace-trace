@@ -41,6 +41,9 @@ function calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender){
     }else if(currentGender === 'female'){
       startingFootLength = 8.875;
     }
+    if(document.getElementById('yes-option').checked){
+      startingFootLength += 2.5
+    }
   var currentFootLength =  footSizeToInchesCalc(shoeSize, startingFootLength, 0.17);
   var widthInFeet = Math.round((widthInSteps * currentFootLength) / 12);
   var heightInFeet = Math.round((heightInSteps * currentFootLength) / 12);
