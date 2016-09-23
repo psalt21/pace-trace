@@ -116,5 +116,11 @@ function footSizeToInchesCalc(shoeSize, startingFootLength, increaseRate){
 }
 
 function resetAll(){
-  calcuOutputs(0, 0);
+  var widthLocation = document.getElementById('width-result').innerHTML = ('0 feet');
+  var heightLocation = document.getElementById('height-result').innerHTML = ('0 feet');
+  var sqrFootLocation = document.getElementById('area-result').innerHTML = ('0 feet');
+  var hypotLocation = document.getElementById('hypot-result').innerHTML = ('0 feet');
+  var circumLocation = document.getElementById('circum-result').innerHTML = ('0 feet');
+  convWidthToPixels(0, 0, 'final-shape');
+  convHeightToPixels(0, 0, 'final-shape');
 }
