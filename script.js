@@ -1,6 +1,7 @@
 // desired functionality:
   // -DONE- 1. rework conversion from shoesize to foot length to be simple equation
-  // 2. Add female option
+  // -DONE- 2. Add female option
+  // 2a. Add option to input custom length but only as decimal.
   // 3. Add option to bare foot vs wearing shoes and add maybe .25" to each step or 1" to every 4 steps
   // 4. Do I want to clear out previous steps when clear is clicked or just results?
   // 5. Click on specific result for individual representation on final ratio shape-result
@@ -10,17 +11,35 @@
   // 9. an explanation or link to explanation of purpose of application and how to use it
   // 10. hit "enter" while in width or height fields to calculate instead of clicking button
   // 11. onclick and hover response for buttons (color change etc.)
+  // 12. add option to flip width and height
 
 // get inputs function upon the "calculate" click event
 function getInputs(){
   var shoeSize = document.getElementById('shoe-size').value;
   var widthInSteps = document.getElementById('width').value;
   var heightInSteps = document.getElementById('height').value;
-  calcuInputs(shoeSize, widthInSteps, heightInSteps);
+  var currentGender = determineGender();
+  calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender);
 }
 
-function calcuInputs(shoeSize, widthInSteps, heightInSteps){
-  var currentFootLength =  footSizeToInchesCalc(shoeSize, 0.17);
+function determineGender(){
+  if(document.getElementById('gender-male').checked) {
+    return('male');
+  }else if(document.getElementById('gender-female').checked) {
+    return('female');
+  }
+}
+
+function calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender){
+  // male footlendght at size 6 is 9.25" and increase rate is .17 per half shoeSize
+  // female footlength at size 6 is 8.875" and increase rate is .17 per half shoeSize
+  var startingFootLength = null;
+    if(currentGender === 'male'){
+      startingFootLength = 9.25;
+    }else if(currentGender === 'female'){
+      startingFootLength = 8.875;
+    }
+  var currentFootLength =  footSizeToInchesCalc(shoeSize, startingFootLength, 0.17);
   var widthInFeet = Math.round((widthInSteps * currentFootLength) / 12);
   var heightInFeet = Math.round((heightInSteps * currentFootLength) / 12);
   calcuOutputs(widthInFeet, heightInFeet);
@@ -60,7 +79,7 @@ function determineMultiplyRate(width, height){
   var multiplyRate = 10;
   var convertedWidthSize = width * multiplyRate;
   var convertedHeightSize = height * multiplyRate;
-  while(convertedWidthSize > 530 || convertedHeightSize > 250){
+  while(convertedWidthSize > 430 || convertedHeightSize > 250){
     multiplyRate = multiplyRate / 2;
     convertedWidthSize = width * multiplyRate;
     convertedHeightSize = height * multiplyRate;
@@ -73,17 +92,16 @@ function ConvertFeetToInches(feet){
   return feet * 12;
 }
 
-function footSizeToInchesCalc(shoeSize, increaseRate){
+function footSizeToInchesCalc(shoeSize, startingFootLength, increaseRate){
   // smallest size is 6 which is 9.25" foot length.
     // if shoeSize minus 6 is greater than 0, then add increaseRate for every .5 over 0.
-  var currentFootLength = 9.25;
   var sizeDif = shoeSize - 6;
   if(sizeDif > 0){
     for(i = sizeDif; i > 0; i = i - 0.5){
-      currentFootLength = currentFootLength + increaseRate;
+      startingFootLength = startingFootLength + increaseRate;
     }
   }
-  return currentFootLength;
+  return startingFootLength;
 }
 
 function resetAll(){

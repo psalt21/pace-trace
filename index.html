@@ -14,7 +14,11 @@
         <div id="inputs-and-results">
           <div id="top-content">
             <div class="inputs">
-              <label>Shoe Size (men): </label>
+              <form name="gender-select">
+                <input type="radio" name="gender" value="male" id="gender-male" checked> Male
+                <input type="radio" name="gender" value="female" id="gender-female"> Female
+              </form>
+              <label>Shoe Size: </label>
                 <select id="shoe-size">
                   <option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option>
                   <option>8.5</option><option>9</option><option>9.5</option><option>10</option><option>10.5</option>
@@ -23,9 +27,9 @@
                   <option>16</option>
                 </select>
               </br>
-              <label>Width: </label><input type="text" id="width" class="input" title="width" placeholder="Total Steps (barefoot)">
+              <label>Width: </label><input type="text" id="width" class="input" title="width" placeholder="Total steps">
               </br>
-              <label class="input-spacing">Height: </label><input type="text" id="height" class="input" title="height" placeholder="Total Steps (barefoot)">
+              <label class="input-spacing">Height: </label><input type="text" id="height" class="input" title="height" placeholder="Total steps">
               </br>
               <button onclick="getInputs()" id="calculate">Calculate</button>
             </div>
