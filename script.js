@@ -2,7 +2,7 @@
   // -DONE- 1. rework conversion from shoesize to foot length to be simple equation
   // -DONE- 2. Add female option
   // 2a. Add option to input custom length but only as decimal.
-  // 3. Add option to bare foot vs wearing shoes and add maybe 2.5" to foot length
+  // -DONE- 3. Add option to bare foot vs wearing shoes and add maybe 2.5" to foot length
   // 4. Do I want to clear out previous steps when clear is clicked or just results?
   // 5. Click on specific result for individual representation on final ratio shape-result
   // 6. (CSS specific) Mobile optimize CSS layout and make more dynamic for browser window resizing
@@ -90,7 +90,7 @@ function determineMultiplyRate(width, height){
     convertedWidthSize = width * multiplyRate;
     convertedHeightSize = height * multiplyRate;
   }
-  while(convertedWidthSize > 430 || convertedHeightSize > 230){
+  while(convertedWidthSize > 300 || convertedHeightSize > 150){
     multiplyRate = multiplyRate / 1.01;
     convertedWidthSize = width * multiplyRate;
     convertedHeightSize = height * multiplyRate;
