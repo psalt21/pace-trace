@@ -20,7 +20,7 @@
                 <input type="radio" name="gender" value="female" id="gender-female"> Female
               </form>
               <form name="wearing-shoes">
-                <label>Wearing Shoes?</label><br />
+                <label>Shoes on?</label>
                 <input type="radio" name="wearing-shoes-option" value="male" id="yes-option" checked> Y
                 <input type="radio" name="wearing-shoes-option" value="female" id="no-option"> N
               </form>
@@ -34,7 +34,9 @@
                 </select>
               </br>
               <label>Width: </label><input type="text" id="width" class="input" title="width" placeholder="Total steps">
-              </br>
+              <div>
+                <input type="image" src="images/ArowIcons.png" name="swap icons" class="switch-icon" title="swap-cons" onclick="swapIcons()" />
+              </div>
               <label class="input-spacing">Height: </label><input type="text" id="height" class="input" title="height" placeholder="Total steps">
               </br>
               <button onclick="getInputs()" id="calculate">Calculate</button>
