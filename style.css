@@ -14,6 +14,10 @@ body{
 input[type=radio] {
   margin-bottom: 15px;
 }
+.switch-icon{
+  margin-left: 20%;
+  width: 12px;
+}
 #female-button{
   margin-right: 50px;
 }
@@ -83,6 +87,9 @@ h2{
   text-align: center;
   float: left;
   margin: 20px 0 0 0;
+}
+#height{
+  margin-top: 0px;
 }
 #results{
   width: 50%;

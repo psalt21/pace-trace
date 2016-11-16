@@ -1,18 +1,12 @@
 // desired functionality:
-  // -DONE- 1. rework conversion from shoesize to foot length to be simple equation
-  // -DONE- 2. Add female option
   // 2a. Add option to input custom length but only as decimal.
-  // -DONE- 3. Add option to bare foot vs wearing shoes and add maybe 2.5" to foot length
   // 4. Do I want to clear out previous steps when clear is clicked or just results?
-  // 5. Click on specific result for individual representation on final ratio shape-result
   // 6. (CSS specific) Mobile optimize CSS layout and make more dynamic for browser window resizing
   // 7. if height or width is 0 then return "0 feet" for diagonal length
   // 8. Add "?"  marks next to each output that you can click (or hover over) to have window pop-up explaining the results
   // 9. an explanation or link to explanation of purpose of application and how to use it
   // 10. hit "enter" while in width or height fields to calculate instead of clicking button
   // 11. onclick and hover response for buttons (color change etc.)
-  // 12. add option to flip width and height
-  // -DONE- 13. rescale shape bigger if it is under a certain size so it won't end up being 1px x 1px
   // 14. do not allow letters in width or height field
   // 15. have x icon in field to clear field by clicking
 
@@ -23,6 +17,13 @@ function getInputs(){
   var heightInSteps = document.getElementById('height').value;
   var currentGender = determineGender();
   calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender);
+}
+
+function swapIcons(){
+  var widthInSteps = document.getElementById('width').value;
+  var heightInSteps = document.getElementById('height').value;
+  document.getElementById('height').value = widthInSteps;
+  document.getElementById('width').value = heightInSteps;
 }
 
 function determineGender(){
