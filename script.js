@@ -1,7 +1,5 @@
 // desired functionality:
   // 2a. Add option to input custom length but only as decimal.
-  // 4. Do I want to clear out previous steps when clear is clicked or just results?
-  // 6. (CSS specific) Mobile optimize CSS layout and make more dynamic for browser window resizing
   // 7. if height or width is 0 then return "0 feet" for diagonal length
   // 8. Add "?"  marks next to each output that you can click (or hover over) to have window pop-up explaining the results
   // 9. an explanation or link to explanation of purpose of application and how to use it

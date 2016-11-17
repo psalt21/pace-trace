@@ -1,12 +1,6 @@
-/*@media screen and (max-width: 480px) {
-    body {
-        background-color: lightgreen;
-    }
-}*/
 body{
   font-family: sans-serif;
   min-width: 319px;
-  /*width: 700px;*/
   width: auto;
   margin-left: auto;
   margin-right: auto;
@@ -32,8 +26,6 @@ input[type=radio] {
   margin-right: 50px;
 }
 #top{
-  /*max-width: 460px;
-  min-width: 360px;*/
   width: auto;
   text-align: center;
   display: block;
@@ -58,13 +50,7 @@ h2{
   text-align: center;
 }
 #shape-result{
-  /*max-width: 460px;
-  min-width: 360px;*/
   width: auto;
-  /*height: 260px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;*/
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -82,16 +68,11 @@ h2{
 .result-output{
   margin-top: -18px;
 }
-/*.result-title{
-  font-weight: bold;
-}*/
 #inputs-and-results{
-  /*max-width: 460px;*/
   width: auto;
   margin: 0 auto;
 }
 #top-content{
-  /*max-width: 460px;*/
   width: auto;
   margin: 0 auto;
 }
@@ -169,15 +150,11 @@ button{
   }
   body{
     font-family: sans-serif;
-    /*max-width: 320px;*/
-    /*width: 700px;*/
     width: auto;
     margin-left: auto;
     margin-right: auto;
   }
   #top{
-    /*max-width: 320px;*/
-    /*min-width: 360px;*/
     width: auto;
     text-align: center;
     display: block;
