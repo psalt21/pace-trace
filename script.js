@@ -8,7 +8,6 @@
   // 10. hit "enter" while in width or height fields to calculate instead of clicking button
   // 11. onclick and hover response for buttons (color change etc.)
   // 14. do not allow letters in width or height field
-  // 15. have x icon in field to clear field by clicking
 
 // get inputs function upon the "calculate" click event
 function getInputs(){
@@ -70,11 +69,11 @@ function calcuOutputs(width, height){
 }
 
 function publishResults(width, height, squareFootage, hypotenuse, circumference){
-  var widthLocation = document.getElementById('width-result').innerHTML = (width + ' feet');
-  var heightLocation = document.getElementById('height-result').innerHTML = (height + ' feet');
-  var sqrFootLocation = document.getElementById('area-result').innerHTML = (squareFootage + ' feet');
-  var hypotLocation = document.getElementById('hypot-result').innerHTML = (hypotenuse + ' feet');
-  var circumLocation = document.getElementById('circum-result').innerHTML = (circumference + ' feet');
+  document.getElementById('width-result').innerHTML = (width + '\'');
+  document.getElementById('height-result').innerHTML = (height + '\'');
+  document.getElementById('area-result').innerHTML = (squareFootage + '\'');
+  document.getElementById('hypot-result').innerHTML = (hypotenuse + '\'');
+  document.getElementById('circum-result').innerHTML = (circumference + '\'');
   var multiplyRate = determineMultiplyRate(width, height);
   var renderedWidth = convWidthToPixels(width, multiplyRate, 'final-shape');
   var renderedHeight = convHeightToPixels(height, multiplyRate, 'final-shape');
@@ -127,11 +126,11 @@ function footSizeToInchesCalc(shoeSize, startingFootLength, increaseRate){
 }
 
 function resetAll(){
-  var widthLocation = document.getElementById('width-result').innerHTML = ('0 feet');
-  var heightLocation = document.getElementById('height-result').innerHTML = ('0 feet');
-  var sqrFootLocation = document.getElementById('area-result').innerHTML = ('0 feet');
-  var hypotLocation = document.getElementById('hypot-result').innerHTML = ('0 feet');
-  var circumLocation = document.getElementById('circum-result').innerHTML = ('0 feet');
+  document.getElementById('width-result').innerHTML = ('0\'');
+  document.getElementById('height-result').innerHTML = ('0\'');
+  document.getElementById('area-result').innerHTML = ('0\'');
+  document.getElementById('hypot-result').innerHTML = ('0\'');
+  document.getElementById('circum-result').innerHTML = ('0\'');
   convWidthToPixels(0, 0, 'final-shape');
   convHeightToPixels(0, 0, 'final-shape');
 }
