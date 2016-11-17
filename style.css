@@ -1,6 +1,7 @@
 body{
   font-family: sans-serif;
-  min-width: 319px;
+  max-width: 500px;
+  min-width: 415px;
   width: auto;
   margin-left: auto;
   margin-right: auto;
@@ -79,10 +80,10 @@ h2{
 
 .inputs{
   width: 50%;
-  text-align: center;
   float: left;
   margin: 20px 0 0 0;
 }
+
 #height{
   margin-top: 0px;
 }
@@ -92,6 +93,7 @@ h2{
   margin-right: auto;
   float: left;
   margin: 9px 0 10px 0;
+  text-align: left;
 }
 
 .result-title{
