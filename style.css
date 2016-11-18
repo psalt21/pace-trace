@@ -137,6 +137,12 @@ button{
   body, #top, #shape-result, #inputs-and-results, #top-content{
     min-width: 319px;
   }
+  h2{
+    font-size: 1em;
+  }
+  button{
+    font-size: .8em;
+  }
   .inputs{
     float: none;
     margin: 0 auto 0 auto;
