@@ -142,6 +142,10 @@ button{
     margin: 0 auto 0 auto;
     width: 100%;
   }
+  .switch-icon{
+    width: 18px;
+    margin-top: 7px;
+  }
   #inputs-and-results{
     font-size: 1.3em;
   }
