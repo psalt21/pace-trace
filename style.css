@@ -30,20 +30,23 @@ button{
 }
 body{
   font-family: sans-serif;
-  max-width: 460px;
+  max-width: 490px;
   min-width: 320px;
   width: auto;
   margin-left: auto;
   margin-right: auto;
 }
 #header{
-  font-size: 100%;
+  font-size: 120%;
 }
 .inputs{
   width: 60%;
   float: left;
   margin: 20px 0 0 0;
   text-align: center;
+}
+.inputs, #results{
+  font-size: 1.3em;
 }
 .input{
   margin-bottom: 2px;
@@ -169,6 +172,27 @@ input[type=radio] {
   #reset-all{
     width: 50%;
     padding: 7px 0;
+  }
+
+}
+
+@media (max-width: 320px){
+  body{
+    font-size: .8em;
+  }
+  .switch-icon{
+    width: 14px;
+    margin-top: 0px;
+  }
+  #results{
+    line-height: 100%;
+    margin: -9px auto -22px auto;
+  }
+  #shape-result{
+    margin-top: 0px;
+  }
+  #calculate{
+    margin-top: 12px;
   }
 
 }
