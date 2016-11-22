@@ -73,8 +73,9 @@ function publishResults(width, height, squareFootage, hypotenuse, circumference)
   document.getElementById('hypot-result').innerHTML = (hypotenuse + '\'');
   document.getElementById('circum-result').innerHTML = (circumference + '\'');
   var multiplyRate = determineMultiplyRate(width, height);
-  var renderedWidth = convWidthToPixels(width, multiplyRate, 'final-shape');
-  var renderedHeight = convHeightToPixels(height, multiplyRate, 'final-shape');
+  convWidthToPixels(width, multiplyRate, 'final-shape');
+  convHeightToPixels(height, multiplyRate, 'final-shape');
+  $('.bottom-content').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
 }
 
 // convert feet into pixels
@@ -131,4 +132,5 @@ function resetAll(){
   document.getElementById('circum-result').innerHTML = ('0\'');
   convWidthToPixels(0, 0, 'final-shape');
   convHeightToPixels(0, 0, 'final-shape');
+  $('.bottom-content').css({"visibility":"hidden"});
 }

@@ -1,94 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <title>PaceTrace</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <title>PaceTrace</title>
+</head>
+<body>
+  <div id="header">
+    <h1>PaceTrace</h1>
+    <h3>measure by <em>YOUR</em> foot</h3>
+  </div>
 
-      <h1>PaceTrace</h1>
-      <h3>measure by <em>YOUR</em> foot</h3>
+  <div class="inputs">
+    <form name="gender-select">
+      <input type="radio" name="gender" value="male" id="gender-male" checked> Male
+      <input type="radio" name="gender" value="female" id="gender-female"> Female
+    </form>
+    <form name="wearing-shoes">
+      <label>Shoes on?</label>
+      <input type="radio" name="wearing-shoes-option" value="male" id="yes-option" checked> Y
+      <input type="radio" name="wearing-shoes-option" value="female" id="no-option"> N
+    </form>
+    <label>Shoe Size: </label>
+    <select id="shoe-size">
+      <option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option>
+      <option>8.5</option><option>9</option><option>9.5</option><option>10</option><option>10.5</option>
+      <option>11</option><option>11.5</option><option>12</option><option>12.5</option><option>13</option>
+      <option>13.5</option><option>14</option><option>14.5</option><option>15</option><option>15.5</option>
+      <option>16</option>
+    </select>
+    </br>
+    <label>Width: </label><input class="clearable input" type="text" id="width" name="" value="" placeholder="Total steps" />
+    <div>
+      <input type="image" src="images/ArowIcons.png" name="swap icons" class="switch-icon" title="swap icons" onclick="swapInputs()" />
+    </div>
+    <label>Height: </label><input class="clearable input" type="text" id="height" name="" value="" placeholder="Total steps" />
+    </br>
+    <button onclick="getInputs()" id="calculate">Calculate</button>
+  </div>
 
-        <div id="inputs-and-results">
-          <div id="top-content">
-          <div class="input-container">
-              <div class="inputs">
-              <form name="gender-select">
-                <input type="radio" name="gender" value="male" id="gender-male" checked> Male
-                <input type="radio" name="gender" value="female" id="gender-female"> Female
-              </form>
-              <form name="wearing-shoes">
-                <label>Shoes on?</label>
-                <input type="radio" name="wearing-shoes-option" value="male" id="yes-option" checked> Y
-                <input type="radio" name="wearing-shoes-option" value="female" id="no-option"> N
-              </form>
-              <label>Shoe Size: </label>
-                <select id="shoe-size">
-                  <option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option>
-                  <option>8.5</option><option>9</option><option>9.5</option><option>10</option><option>10.5</option>
-                  <option>11</option><option>11.5</option><option>12</option><option>12.5</option><option>13</option>
-                  <option>13.5</option><option>14</option><option>14.5</option><option>15</option><option>15.5</option>
-                  <option>16</option>
-                </select>
-              </br>
-              <label>Width: </label><input class="clearable input" type="text" id="width" name="" value="" placeholder="Total steps" />
-              <div>
-                <input type="image" src="images/ArowIcons.png" name="swap icons" class="switch-icon" title="swap icons" onclick="swapInputs()" />
-              </div>
-              <label>Height: </label><input class="clearable input" type="text" id="height" name="" value="" placeholder="Total steps" />
-              </br>
-              <button onclick="getInputs()" id="calculate">Calculate</button>
-            </div>
+  <div id="results">
+    <div class="result-section">
+      <div class="result-title">
+        <p title="width"><strong>Width: </strong><span id="width-result">0'</span></p>
+      </div>
+    </div>
 
-            <div id="results">
-              <div class="result-section">
-                <div class="result-title">
-                  <p title="width"><strong>Width: </strong><span id="width-result">0'</span></p>
-                </div>
-              </div>
+    <div class="result-section">
+      <div class="result-title">
+        <p title="height"><strong>Height: </strong><span id="height-result">0'</span></p>
+      </div>
+    </div>
 
-              <div class="result-section">
-                  <div class="result-title">
-                    <p title="height"><strong>Height: </strong><span id="height-result">0'</span></p>
-                  </div>
-              </div>
+    <div class="result-section">
+      <div class="result-title">
+        <p title="square footage"><strong>Sq Ft: </strong><span id="area-result">0'</span></p>
+      </div>
+    </div>
 
-              <div class="result-section">
-                  <div class="result-title">
-                    <p title="square footage"><strong>Sq Ft: </strong><span id="area-result">0'</span></p>
-                  </div>
-              </div>
+    <div class="result-section">
+      <div class="result-title">
+        <p title="diagonal length"><strong>Diag Lgth: </strong><span id="hypot-result">0'</span></p>
+      </div>
+    </div>
 
-              <div class="result-section">
-                  <div class="result-title">
-                    <p title="diagonal length"><strong>Diag Lgth: </strong><span id="hypot-result">0'</span></p>
-                  </div>
-              </div>
-
-              <div class="result-section">
-                  <div class="result-title">
-                    <p title="circumference"><strong>Circum: </strong><span id="circum-result">0'</span></p>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="reset-button">
-            <button onclick="resetAll()" id="reset-all">Clear</button>
-          </div>
-
-          <h2>Final Ratio</h2>
-          <div id="shape-result">
-            <div id="final-shape"></div>
-          </div>
-        </div>
+    <div>
+      <div class="result-title">
+        <p title="circumference"><strong>Circum: </strong><span id="circum-result">0'</span></p>
+      </div>
+    </div>
+  </div>
 
 
+<div class="bottom-content">
+  <div id="reset-button">
+    <button onclick="resetAll()" id="reset-all">Clear</button>
+  </div>
 
-        <script type="text/javascript" src="script.js"></script>
+  <h2>Final Ratio</h2>
+  <div id="shape-result">
+    <div id="final-shape"></div>
+  </div>
+</div>
 
-  </body>
+<script type="text/javascript" src="script.js"></script>
+
+</body>
 </html>
