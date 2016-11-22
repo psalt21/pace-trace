@@ -1,13 +1,22 @@
 body{
   font-family: sans-serif;
-  max-width: 500px;
-  min-width: 415px;
+  max-width: 460px;
+  min-width: 320px;
   width: auto;
   margin-left: auto;
   margin-right: auto;
 }
 input[type=radio] {
   margin-bottom: 15px;
+}
+.bottom-content{
+  visibility: hidden;
+  margin: 0 auto;
+  text-align: center;
+  clear: both;
+}
+#header{
+  font-size: 100%;
 }
 .clearable{
   background: #fff url(http://i.stack.imgur.com/mJotv.gif) no-repeat right -10px center;
@@ -25,13 +34,6 @@ input[type=radio] {
 }
 #female-button{
   margin-right: 50px;
-}
-#inputs-and-results{
-  width: auto;
-  text-align: center;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
 }
 strong{
   color: rgb(64, 117, 175);
@@ -69,19 +71,12 @@ h2{
 .result-output{
   margin-top: -18px;
 }
-#inputs-and-results{
-  width: auto;
-  margin: 0 auto;
-}
-#top-content{
-  width: auto;
-  margin: 0 auto;
-}
 
 .inputs{
   width: 60%;
   float: left;
   margin: 20px 0 0 0;
+  text-align: center;
 }
 
 #height{
@@ -107,11 +102,12 @@ h2{
 }
 #reset-button{
   text-align: center;
-  width: 100%;
+  width: 300px;
   clear: both;
+  margin: 0 auto;
+
 }
 #reset-all{
-  margin: 10px 0 0 0;
   background-color: #f79797;
   width: 55px;
   height: inherit;
@@ -133,9 +129,15 @@ button{
 }
 
 /* Responsive breakpoints*/
-@media (max-width: 414px){
+@media (max-width: 600px){
   body, #top, #shape-result, #inputs-and-results, #top-content{
-    min-width: 319px;
+  
+  }
+  #header{
+    font-size: 120%;
+    margin-top: -20px;
+    /*margin: 0 auto;
+    text-align: center;*/
   }
   h2{
     font-size: 1em;
@@ -145,7 +147,7 @@ button{
   }
   .inputs{
     float: none;
-    margin: 0 auto 0 auto;
+    margin: -10px auto 0 auto;
     width: 100%;
   }
   .switch-icon{
@@ -158,7 +160,7 @@ button{
   #results{
     float: none;
     margin: 13px auto 0 auto;
-    width: 95%;
+    width: 75%;
     text-align: center;
   }
   .result-section{
@@ -169,10 +171,10 @@ button{
   #calculate{
     margin:20px 0 10px 0;
     padding: 5px 0;
-    width: 55%;
+    width: 50%;
   }
   #reset-all{
-    width: 90%;
+    width: 50%;
     padding: 7px 0;
   }
   body{
