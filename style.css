@@ -139,10 +139,20 @@ button{
     /*margin: 0 auto;
     text-align: center;*/
   }
+  h2{
+    font-size: 1em;
+  }
+  button{
+    font-size: .8em;
+  }
   .inputs{
     float: none;
     margin: -10px auto 0 auto;
     width: 100%;
+  }
+  .switch-icon{
+    width: 18px;
+    margin-top: 7px;
   }
   #inputs-and-results{
     font-size: 1.3em;
