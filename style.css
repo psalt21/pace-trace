@@ -152,7 +152,8 @@ input[type=radio] {
   }
   #results{
     float: none;
-    margin: 13px auto 0 auto;
+    line-height: 100%;
+    margin: -9px auto -22px auto;
     width: 75%;
     text-align: center;
   }
@@ -162,7 +163,7 @@ input[type=radio] {
     margin: -25px 0 0 0;
   }
   #calculate{
-    margin:20px 0 10px 0;
+    margin:10px 0 10px 0;
     padding: 5px 0;
     width: 50%;
   }
@@ -172,6 +173,9 @@ input[type=radio] {
   #reset-all{
     width: 50%;
     padding: 7px 0;
+  }
+  #shape-result{
+    margin-top: 0px;
   }
 
 }
