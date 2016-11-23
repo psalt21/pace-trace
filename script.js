@@ -82,7 +82,7 @@ function publishResults(width, height, squareFootage, hypotenuse, circumference)
 function convWidthToPixels(shapeSize, multiplyRate, destinationId){
   var convertedSize = shapeSize * multiplyRate;
   document.getElementById(destinationId).style.width = (convertedSize + 'px');
-  document.getElementById(destinationId).style.backgroundColor = '#94b4dc';
+  document.getElementById(destinationId).style.backgroundColor = '#b5e2fa';
 }
 
 function convHeightToPixels(shapeSize, multiplyRate, destinationId){
