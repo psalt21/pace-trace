@@ -1,5 +1,8 @@
+body{
+  color: #4a4a4a;
+}
 strong{
-  color: rgb(64, 117, 175);
+  color: #0496ff;
 }
 h1, h3{
   text-align: center;
@@ -8,13 +11,24 @@ h3{
   margin-top: 0px;
   font-weight: lighter;
   font-size: 1.27em;
+  color: #8c8c8c;
 }
 h1{
   font-size: 2.7em;
   margin: 8px auto -4px auto;
+  color: #D62828
 }
 h2{
   text-align: center;
+}
+.small-line{
+  width: 80%;
+  border: 1px dashed #ffdfdf;
+}
+.smallest-text{
+  margin: 0 0 0 0;
+  font-size: .6em;
+  font-style: italic;
 }
 button{
   background: red;
@@ -49,6 +63,30 @@ button{
   margin-top: -8px;
   min-width: 320px;
 }
+.navigation{
+  margin: 0 0 2px 20px;
+}
+
+.tiptext {
+  /*background:#ccc;
+  border: 1px #333 solid;*/
+  padding:5px;
+  width:100px;
+  margin: 0 0 2px 20px;
+}
+.description {
+  display: none;
+  position: absolute;
+  border: 1px solid #ffdfdf;
+  width: 281px;
+  height: 373;
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 5px 7px 12px #e0e0e0;
+
+}
+
 .inputs{
   width: 60%;
   float: left;
@@ -60,8 +98,12 @@ button{
 }
 .input{
   margin-bottom: 2px;
-  margin-top: 15px;
-  width: 75px;
+  margin-top: 7px;
+  width: 64px;
+}
+#custom-inches-input{
+  width: 53px;
+  margin-top: 6px;
 }
 input[type=radio] {
   margin-bottom: 15px;
@@ -74,6 +116,9 @@ input[type=radio] {
 }
 #height{
   margin-top: 0px;
+}
+#calculate{
+  background-color: #0496ff;
 }
 #results{
   width: 40%;
@@ -141,19 +186,29 @@ input[type=radio] {
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    color: #4a4a4a;
+    /*font-size: 1.4em;*/
   }
   #header{
-    font-size: 120%;
+    font-size: 1.5em;
     /*margin: 0 auto;
     text-align: center;*/
   }
+  h1{
+    color: #D62828;
+  }
   h2{
     font-size: 1em;
+  }
+  strong{
+    color: #0496ff;
   }
   .inputs{
     float: none;
     margin: 0 auto;
     width: 100%;
+    font-size: 1.7em;
+
   }
   .switch-icon{
     width: 18px;
@@ -165,6 +220,7 @@ input[type=radio] {
     margin: -9px auto -22px auto;
     width: 92%;
     text-align: center;
+    font-size: 1.2em;
   }
   .result-section{
     float: left;
@@ -175,6 +231,7 @@ input[type=radio] {
     margin:10px 0 10px 0;
     padding: 5px 0;
     width: 50%;
+    background-color: #0496ff;
   }
   button{
     font-size: .8em;
@@ -186,6 +243,10 @@ input[type=radio] {
   #shape-result{
     margin-top: 0px;
   }
+
+}
+
+@media (max-width: 414px){
 
 }
 
@@ -204,6 +265,7 @@ input[type=radio] {
   #results{
     line-height: 100%;
     margin: -9px auto -22px auto;
+    font-size: 1.2em;
   }
   #shape-result{
     margin-top: 0px;
@@ -218,9 +280,12 @@ input[type=radio] {
     /*background-color: #b5e2fa;*/
     margin-top: -8px;
   }
+  .description{
+    width: 233px;
+  }
   #content{
     overflow: auto;
-    height: 465px;
+    height: 428px;
     margin-bottom: -8px;
   }
   #reset-all{
@@ -234,7 +299,7 @@ input[type=radio] {
     color: #D62828;
   }
   h3{
-    margin: 0 auto 10px auto;
+    margin: 0 auto 5px auto;
     color: #8c8c8c;
   }
   strong{

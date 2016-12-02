@@ -13,6 +13,10 @@
     <h1>PaceTrace</h1>
     <h3>measure by <em>YOUR</em> foot</h3>
   </div>
+  <!-- <a href class="navigation">about</a> -->
+  <div class="tiptext">about
+    <div class="description"> This is a description of what this thing is all about. Are you looking to take a rough measurment using the tools you already have on hand... or should we say on "foot"? Why assume your foot is the same as 12 inches? As you step heal to toe you count those steps and then do a rough estimate in your head right? Here is an option to do a much more refined rough estiamate. We realize this is not a tool for a carpenter to build his next masterpiece or a way to get the precise dimension for that new addition on your home - but have you ever simply wondered how big your backyard really is so you know how many sprinklers to install? Is that christmas tree too big for the space? We are terrible at estimating just in our head. this tool will help you get there with confidence.</div>
+  </div>
 
   <hr />
 
@@ -22,11 +26,12 @@
         <input type="radio" name="gender" value="male" id="gender-male" checked> Male
         <input type="radio" name="gender" value="female" id="gender-female"> Female
       </form>
-      <form name="wearing-shoes">
+      <!-- <form name="wearing-shoes">
         <label>Shoes on?</label>
         <input type="radio" name="wearing-shoes-option" value="male" id="yes-option" checked> Y
         <input type="radio" name="wearing-shoes-option" value="female" id="no-option"> N
-      </form>
+      </form> -->
+      <hr class="small-line" />
       <label>Shoe Size: </label>
       <select id="shoe-size">
         <option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option>
@@ -35,7 +40,11 @@
         <option>13.5</option><option>14</option><option>14.5</option><option>15</option><option>15.5</option>
         <option>16</option>
       </select>
-      </br>
+      <p class="smallest-text">-or-</p>
+      <label>Custom: </label><input id="custom-inches-input" class="clearable input" type="text" id="width" name="" value="" placeholder="In inches" />
+      <div>
+      <hr class="small-line" />
+
       <label>Width: </label><input class="clearable input" type="text" id="width" name="" value="" placeholder="Total steps" />
       <div>
         <input type="image" src="images/ArowIcons.png" name="swap icons" class="switch-icon" title="swap icons" onclick="swapInputs()" />
@@ -44,6 +53,7 @@
       </br>
       <button onclick="getInputs()" id="calculate">Calculate</button>
     </div>
+  </div>
 
     <div id="results">
       <div class="result-section">
@@ -88,7 +98,7 @@
       <div id="final-shape"></div>
     </div>
   </div>
-</div>
+
 
 
 <script type="text/javascript" src="script.js"></script>
