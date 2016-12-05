@@ -22,7 +22,7 @@
 
   <div id="content">
     <div class="inputs">
-      <form name="gender-select">
+      <form name="gender-select" id="gender-buttons">
         <input type="radio" name="gender" value="male" id="gender-male" checked> Male
         <input type="radio" name="gender" value="female" id="gender-female"> Female
       </form>
@@ -47,7 +47,9 @@
 
       <label>Width: </label><input class="clearable input" type="text" id="width" name="" value="" placeholder="Total steps" />
       <div>
-        <input type="image" src="images/ArowIcons.png" name="swap icons" class="switch-icon" title="swap icons" onclick="swapInputs()" />
+        <!-- <input type="image" src="images/ArowIcons.png" name="swap icons" class="switch-icon" title="swap icons" onclick="swapInputs()" /> -->
+        <!-- <input type="text" value="images/ArowIcons.png" name="swap icons" class="switch-icon" title="swap icons" onclick="swapInputs()" /> -->
+        <input type="text" name="arrows" value="&#8693;" class="switch-icon" title="swap icons" onclick="swapInputs()">
       </div>
       <label>Height: </label><input class="clearable input" type="text" id="height" name="" value="" placeholder="Total steps" />
       </br>
@@ -55,37 +57,39 @@
     </div>
   </div>
 
-    <div id="results">
-      <div class="result-section">
-        <div class="result-title">
-          <p title="width"><strong>Width: </strong><span id="width-result">0'</span></p>
-        </div>
-      </div>
+  <div id="results">
 
-      <div class="result-section">
-        <div class="result-title">
-          <p title="height"><strong>Height: </strong><span id="height-result">0'</span></p>
-        </div>
-      </div>
-
-      <div class="result-section">
-        <div class="result-title">
-          <p title="square footage"><strong>Sq Ft: </strong><span id="area-result">0'</span></p>
-        </div>
-      </div>
-
-      <div class="result-section">
-        <div class="result-title">
-          <p title="diagonal length"><strong>Diag Lgth: </strong><span id="hypot-result">0'</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="result-title">
-          <p title="circumference"><strong>Circum: </strong><span id="circum-result">0'</span></p>
-        </div>
+    <div class="result-section">
+      <div class="result-title">
+        <p title="width"><strong>Width: </strong><span id="width-result">0'</span></p>
       </div>
     </div>
+
+    <div class="result-section">
+      <div class="result-title">
+        <p title="height"><strong>Height: </strong><span id="height-result">0'</span></p>
+      </div>
+    </div>
+
+    <div class="result-section">
+      <div class="result-title">
+        <p title="square footage"><strong>Sq Ft: </strong><span id="area-result">0'</span></p>
+      </div>
+    </div>
+
+    <div class="result-section">
+      <div class="result-title">
+        <p title="diagonal length"><strong>Diag Lgth: </strong><span id="hypot-result">0'</span></p>
+      </div>
+    </div>
+
+    <div id="circum-result-style">
+      <div class="result-title">
+        <p title="circumference"><strong>Circum: </strong><span id="circum-result">0'</span></p>
+      </div>
+    </div>
+
+  </div>
 
 
   <div class="bottom-content">
@@ -98,7 +102,6 @@
       <div id="final-shape"></div>
     </div>
   </div>
-
 
 
 <script type="text/javascript" src="script.js"></script>

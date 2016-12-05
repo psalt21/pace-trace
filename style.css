@@ -1,6 +1,9 @@
 body{
   color: #4a4a4a;
 }
+p{
+  margin: 0px;
+}
 strong{
   color: #0496ff;
 }
@@ -9,6 +12,7 @@ h1, h3{
 }
 h3{
   margin-top: 0px;
+  margin-bottom: 2px;
   font-weight: lighter;
   font-size: 1.27em;
   color: #8c8c8c;
@@ -59,7 +63,6 @@ button{
 #header{
   overflow: hidden;
   height: auto;
-  /*background-color: #b5e2fa;*/
   margin-top: -8px;
   min-width: 320px;
 }
@@ -68,8 +71,6 @@ button{
 }
 
 .tiptext {
-  /*background:#ccc;
-  border: 1px #333 solid;*/
   padding:5px;
   width:100px;
   margin: 0 0 2px 20px;
@@ -84,9 +85,29 @@ button{
   padding: 15px;
   border-radius: 4px;
   box-shadow: 5px 7px 12px #e0e0e0;
-
 }
-
+.tiptext2{
+  margin: 0 0 0 0;
+  color: red;
+  float: left;
+}
+.result-title{
+  float: left;
+}
+#circum-result-style{
+  margin-top: 0px;
+}
+.description2{
+  display: none;
+  position: absolute;
+  border: 1px solid #ffdfdf;
+  width: 281px;
+  height: 373;
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 5px 7px 12px #e0e0e0;
+}
 .inputs{
   width: 60%;
   float: left;
@@ -113,6 +134,7 @@ input[type=radio] {
 }
 .switch-icon{
   width: 12px;
+  border: none;
 }
 #height{
   margin-top: 0px;
@@ -121,16 +143,14 @@ input[type=radio] {
   background-color: #0496ff;
 }
 #results{
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-  float: left;
-  margin: 15px 0 10px -20px;
-  text-align: left;
+  width: 90%;
+  margin: 0 auto;
 }
 .result-title{
   color: #ababab;
   margin: 20px 0 0 0;
+  text-align: center;
+  width: 90%;
 }
 .bottom-content{
   visibility: hidden;
@@ -180,19 +200,19 @@ input[type=radio] {
 
 
 /* Responsive breakpoints*/
-@media (max-width: 600px){
+@media (max-width: 768px){
   body{
     font-family: sans-serif;
     width: auto;
     margin-left: auto;
     margin-right: auto;
     color: #4a4a4a;
-    /*font-size: 1.4em;*/
   }
   #header{
     font-size: 1.5em;
-    /*margin: 0 auto;
-    text-align: center;*/
+  }
+  #gender-buttons{
+    margin: 10px 0 0 0;
   }
   h1{
     color: #D62828;
@@ -204,7 +224,7 @@ input[type=radio] {
     color: #0496ff;
   }
   .inputs{
-    float: none;
+    float: left;
     margin: 0 auto;
     width: 100%;
     font-size: 1.7em;
@@ -214,18 +234,11 @@ input[type=radio] {
     width: 18px;
     margin-top: 7px;
   }
-  #results{
-    float: none;
-    line-height: 100%;
-    margin: -9px auto -22px auto;
-    width: 92%;
-    text-align: center;
-    font-size: 1.2em;
-  }
   .result-section{
     float: left;
     width: 50%;
-    margin: -25px 0 0 0;
+    margin: 0 0 0 0;
+    height: auto;
   }
   #calculate{
     margin:10px 0 10px 0;
@@ -247,7 +260,45 @@ input[type=radio] {
 }
 
 @media (max-width: 414px){
+  #header{
+  overflow: hidden;
+  height: auto;
+  margin-top: -8px;
+  }
+  #content{
+    overflow: auto;
+    height: 566px;
+    margin-bottom: -8px;
+  }
+}
 
+@media (max-width: 375px){
+  #header{
+  overflow: hidden;
+  height: auto;
+  margin-top: -8px;
+  }
+  #content{
+    overflow: auto;
+    height: 497px;
+    margin-bottom: -8px;
+  }
+}
+
+@media (max-width: 360px){
+  #header{
+  overflow: hidden;
+  height: auto;
+  margin-top: -8px;
+  }
+  #content{
+    overflow: auto;
+    height: 470px;
+    margin-bottom: -8px;
+  }
+  #results{
+    font-size: 1.2em;
+  }
 }
 
 @media (max-width: 320px){
@@ -262,11 +313,6 @@ input[type=radio] {
   .inputs{
     margin-top: 10px;
   }
-  #results{
-    line-height: 100%;
-    margin: -9px auto -22px auto;
-    font-size: 1.2em;
-  }
   #shape-result{
     margin-top: 0px;
   }
@@ -277,7 +323,6 @@ input[type=radio] {
   #header{
     overflow: hidden;
     height: auto;
-    /*background-color: #b5e2fa;*/
     margin-top: -8px;
   }
   .description{
@@ -285,7 +330,7 @@ input[type=radio] {
   }
   #content{
     overflow: auto;
-    height: 428px;
+    height: 423px;
     margin-bottom: -8px;
   }
   #reset-all{
@@ -304,6 +349,10 @@ input[type=radio] {
   }
   strong{
     color: #0496ff;
+  }
+  #results{
+    font-size: 1.4em;
+    width: 95%;
   }
 
 }

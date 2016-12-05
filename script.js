@@ -22,6 +22,12 @@ $(".tiptext").mouseover(function() {
     $(this).children(".description").hide();
 });
 
+$(".tiptext2").mouseover(function() {
+    $(this).children(".description2").show();
+}).mouseout(function() {
+    $(this).children(".description2").hide();
+});
+
 function tog(v){return v?'addClass':'removeClass';}
 $(document).on('input', '.clearable', function(){
     $(this)[tog(this.value)]('x');
