@@ -16,6 +16,18 @@ function getInputs(){
   calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender);
 }
 
+$(".tiptext").mouseover(function() {
+    $(this).children(".description").show();
+}).mouseout(function() {
+    $(this).children(".description").hide();
+});
+
+$(".tiptext2").mouseover(function() {
+    $(this).children(".description2").show();
+}).mouseout(function() {
+    $(this).children(".description2").hide();
+});
+
 function tog(v){return v?'addClass':'removeClass';}
 $(document).on('input', '.clearable', function(){
     $(this)[tog(this.value)]('x');
@@ -50,9 +62,9 @@ function calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender){
     }else if(currentGender === 'female'){
       startingFootLength = 8.875;
     }
-    if(document.getElementById('yes-option').checked){
-      startingFootLength += 2.5;
-    }
+    // if(document.getElementById('yes-option').checked){
+    //   startingFootLength += 2.5;
+    // }
   var currentFootLength =  footSizeToInchesCalc(shoeSize, startingFootLength, 0.17);
   var widthInFeet = Math.round((widthInSteps * currentFootLength) / 12);
   var heightInFeet = Math.round((heightInSteps * currentFootLength) / 12);
