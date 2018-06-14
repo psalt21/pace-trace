@@ -135,6 +135,7 @@ input[type=radio] {
 .switch-icon{
   width: 12px;
   border: none;
+    font-size: 16pt;
 }
 #height{
   margin-top: 0px;
@@ -143,8 +144,8 @@ input[type=radio] {
   background-color: #0496ff;
 }
 #results{
-  width: 90%;
   margin: 0 auto;
+  display: inline-block;
 }
 .result-title{
   color: #ababab;

@@ -18,16 +18,10 @@ function getInputs(){
     calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender);
 };
 
-$(".tiptext").click(function() {
+$(".tiptext").mouseover(function() {
     $(this).children(".description").show();
 }).mouseout(function() {
     $(this).children(".description").hide();
-});
-
-$(".tiptext2").blur(function() {
-    $(this).children(".description2").show();
-}).mouseout(function() {
-    $(this).children(".description2").hide();
 });
 
 function tog(v){return v?'addClass':'removeClass';}
@@ -139,12 +133,19 @@ function footSizeToInchesCalc(shoeSize, startingFootLength, increaseRate){
 }
 
 function resetAll(){
-  document.getElementById('width-result').innerHTML = ('0\'');
-  document.getElementById('height-result').innerHTML = ('0\'');
-  document.getElementById('area-result').innerHTML = ('0\'');
-  document.getElementById('hypot-result').innerHTML = ('0\'');
-  document.getElementById('circum-result').innerHTML = ('0\'');
-  convWidthToPixels(0, 0, 'final-shape');
-  convHeightToPixels(0, 0, 'final-shape');
-  $('.bottom-content').css({"visibility":"hidden"});
+    
+    let resultsList = [
+        'width-result', 
+        'height-result', 
+        'area-result', 
+        'hypot-result', 
+        'circum-result'
+    ];
+    
+    for (let result in resultsList){
+        document.getElementById(resultsList[result]).innterHTML = ('0\'');
+    }
+    convWidthToPixels(0, 0, 'final-shape');
+    convHeightToPixels(0, 0, 'final-shape');
+    $('.bottom-content').css({"visibility":"hidden"});
 }
