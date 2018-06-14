@@ -143,7 +143,7 @@ function resetAll(){
     ];
     
     for (let result in resultsList){
-        document.getElementById(resultsList[result]).innterHTML = ('0\'');
+        document.getElementById(resultsList[result]).innerHTML = ('0\'');
     }
     convWidthToPixels(0, 0, 'final-shape');
     convHeightToPixels(0, 0, 'final-shape');
