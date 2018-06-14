@@ -8,21 +8,23 @@
   // 14. do not allow letters in width or height field
 
 // get inputs function upon the "calculate" click event
-function getInputs(){
-  var shoeSize = document.getElementById('shoe-size').value;
-  var widthInSteps = document.getElementById('width').value;
-  var heightInSteps = document.getElementById('height').value;
-  var currentGender = determineGender();
-  calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender);
-}
 
-$(".tiptext").mouseover(function() {
+function getInputs(){
+    let shoeSize = document.getElementById('shoe-size').value,
+    widthInSteps = document.getElementById('width').value,
+    heightInSteps = document.getElementById('height').value,
+    currentGender = determineGender();
+  
+    calcuInputs(shoeSize, widthInSteps, heightInSteps, currentGender);
+};
+
+$(".tiptext").click(function() {
     $(this).children(".description").show();
 }).mouseout(function() {
     $(this).children(".description").hide();
 });
 
-$(".tiptext2").mouseover(function() {
+$(".tiptext2").blur(function() {
     $(this).children(".description2").show();
 }).mouseout(function() {
     $(this).children(".description2").hide();
